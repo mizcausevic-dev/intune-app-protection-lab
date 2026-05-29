@@ -32,15 +32,13 @@ function New-ProofImage {
     $eyebrowFont = New-Object System.Drawing.Font("Segoe UI", 16, [System.Drawing.FontStyle]::Bold)
     $titleFont = New-Object System.Drawing.Font("Georgia", 34, [System.Drawing.FontStyle]::Bold)
     $bodyFont = New-Object System.Drawing.Font("Segoe UI", 18)
-    $bulletFont = New-Object System.Drawing.Font("Segoe UI", 20, [System.Drawing.FontStyle]::Bold)
-
     $graphics.DrawString("Intune App Protection Lab", $eyebrowFont, $accentBrush, 92, 92)
     $graphics.DrawString($Title, $titleFont, $textBrush, 92, 142)
     $graphics.DrawString($Subtitle, $bodyFont, $mutedBrush, 92, 214)
 
     $y = 320
     foreach ($bullet in $Bullets) {
-        $graphics.DrawString("•", $bulletFont, $altAccentBrush, 108, $y)
+        $graphics.FillEllipse($altAccentBrush, 114, $y + 12, 10, 10)
         $graphics.DrawString($bullet, $bodyFont, $textBrush, 138, $y + 2)
         $y += 82
     }
@@ -51,7 +49,7 @@ function New-ProofImage {
     $bitmap.Dispose()
 }
 
-New-ProofImage -Path (Join-Path $screenshots "01-overview-proof.png") `
+New-ProofImage -Path (Join-Path $screenshots "01-overview-proof-v2.png") `
     -Title "Overview proof" `
     -Subtitle "App protection posture, unmanaged transfer risk, BYOD scope, and enforcement sequencing in one Intune operator surface." `
     -Bullets @(
@@ -60,7 +58,7 @@ New-ProofImage -Path (Join-Path $screenshots "01-overview-proof.png") `
         "Every lane stays tied to an operator-safe enforcement packet."
     )
 
-New-ProofImage -Path (Join-Path $screenshots "02-protection-lane-proof.png") `
+New-ProofImage -Path (Join-Path $screenshots "02-protection-lane-proof-v2.png") `
     -Title "Protection lane" `
     -Subtitle "Each app lane keeps owner, persona, platform, protection state, and next action visible." `
     -Bullets @(
@@ -69,7 +67,7 @@ New-ProofImage -Path (Join-Path $screenshots "02-protection-lane-proof.png") `
         "Next actions stay operator-safe and audit-readable."
     )
 
-New-ProofImage -Path (Join-Path $screenshots "03-policy-gaps-proof.png") `
+New-ProofImage -Path (Join-Path $screenshots "03-policy-gaps-proof-v2.png") `
     -Title "Policy gaps" `
     -Subtitle "Findings map severity, owner, app, platform, and the exact protection rule that fired." `
     -Bullets @(
@@ -78,7 +76,7 @@ New-ProofImage -Path (Join-Path $screenshots "03-policy-gaps-proof.png") `
         "The lane is grounded in real Intune app-protection primitives."
     )
 
-New-ProofImage -Path (Join-Path $screenshots "04-enforcement-posture-proof.png") `
+New-ProofImage -Path (Join-Path $screenshots "04-enforcement-posture-proof-v2.png") `
     -Title "Enforcement posture" `
     -Subtitle "Packets tie completeness, blocker, owner, and rollout timing together." `
     -Bullets @(

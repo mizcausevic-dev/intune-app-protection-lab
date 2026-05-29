@@ -40,10 +40,10 @@ Operator control plane for Microsoft Intune app protection, unmanaged transfer r
 
 ## Screenshots
 
-![Overview proof](./screenshots/01-overview-proof.png)
-![Protection lane](./screenshots/02-protection-lane-proof.png)
-![Policy gaps](./screenshots/03-policy-gaps-proof.png)
-![Enforcement posture](./screenshots/04-enforcement-posture-proof.png)
+![Overview proof](./screenshots/01-overview-proof-v2.png)
+![Protection lane](./screenshots/02-protection-lane-proof-v2.png)
+![Policy gaps](./screenshots/03-policy-gaps-proof-v2.png)
+![Enforcement posture](./screenshots/04-enforcement-posture-proof-v2.png)
 
 ## CLI
 
